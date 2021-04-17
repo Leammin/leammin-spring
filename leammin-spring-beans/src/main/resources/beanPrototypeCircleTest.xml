@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="testA" class="com.leammin.spring.beans.circle.TestA" scope="prototype">
+        <property name="testB" ref="testB" />
+    </bean>
+    <bean name="testB" class="com.leammin.spring.beans.circle.TestB" scope="prototype">
+        <property name="testC" ref="testC" />
+    </bean>
+    <bean name="testC" class="com.leammin.spring.beans.circle.TestC" scope="prototype">
+        <property name="testA" ref="testA" />
+    </bean>
+</beans>
